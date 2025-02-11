@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../Redux/CartSlice";
 import { useNavigate } from "react-router-dom";
-import { addToWishlist } from "../../Redux/wishlistSlice";
+import { addToWishlist } from "../../Redux/WishlistSlice";
 import { FaRegHeart } from "react-icons/fa";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 

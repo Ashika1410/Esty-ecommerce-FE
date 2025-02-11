@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../../Redux/CartSlice";
 import { FcLike } from "react-icons/fc";
 import { FaShoppingCart } from "react-icons/fa";
-import { addToWishlist } from "../../Redux/wishlistSlice";
+import { addToWishlist } from "../../Redux/WishlistSlice";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
