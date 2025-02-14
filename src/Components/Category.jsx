@@ -2,14 +2,14 @@ export default function Category() {
     return (
         <>
             <section>
-                <div className="text-2xl font-bold">
+                <div className="text-2xl font-bold mx-12">
                     <h1>Shop our popular gift categories</h1>
                 </div>
 
                 {/* First Products Section */}
                 <div className="bg-white">
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-3 sm:py-16 lg:max-w-7xl lg:px-8">
-                        <div className="mt-1 grid grid-cols-1 gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:grid-cols-5">
+                        <div className="mt-1 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:grid-cols-5">
                             {/* Anniversary Gifts */}
                             <a href="/anniversary" className="group">
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden border b-8 rounded-lg bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
