@@ -1,3 +1,4 @@
+
 export default function HomePage() {
   return (
     <>
@@ -13,7 +14,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
-                    src="src\assets\cd-1.PNG"
+                    src="https://i.etsystatic.com/31618099/r/il/3eceb8/5548664505/il_794xN.5548664505_ib2y.jpg"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -27,7 +28,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Olive drab green insulated bottle with flared screw lid and flat top."
-                    src="src\assets\cd-2.PNG"
+                    src="https://i.etsystatic.com/16578798/r/il/4fe088/2510454746/il_794xN.2510454746_q3fe.jpg"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -41,7 +42,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Person using a pen to cross a task off a productivity paper card."
-                    src="src\assets\cd-3.PNG"
+                    src="https://i.etsystatic.com/28614761/r/il/6d5bc9/4807200773/il_794xN.4807200773_g28n.jpg"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -55,7 +56,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Hand holding black machined steel mechanical pencil with brass tip and top."
-                    src="src\assets\cd-4.PNG"
+                    src="https://i.etsystatic.com/49523173/c/1329/1329/361/481/il/39bf16/6387404066/il_170x135.6387404066_olck.jpg"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -69,7 +70,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Hand holding black machined steel mechanical pencil with brass tip and top."
-                    src="src\assets\cd-5.PNG"
+                    src="https://i.etsystatic.com/16555624/c/1639/1301/112/541/il/9ee34f/4407428528/il_340x270.4407428528_nmcn.jpg"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -83,7 +84,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Hand holding black machined steel mechanical pencil with brass tip and top."
-                    src="src\assets\cd-6.PNG"
+                    src="https://i.etsystatic.com/38492349/r/il/cfe979/6326225670/il_794xN.6326225670_8ojg.jpg"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>

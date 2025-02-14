@@ -15,7 +15,7 @@ export default function Category() {
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden border b-8 rounded-lg bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                                     <img
                                         alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
-                                        src="src/assets/Crd-1.PNG"
+                                        src="https://i.etsystatic.com/51757054/r/il/725b8e/6241710457/il_794xN.6241710457_pbfd.jpg"
                                         className="h-full w-full object-cover object-center group-hover:opacity-65"
                                     />
                                     <h3 className="mt-2 text-lg text-gray-700 p-2 font-semibold flex justify-center">
@@ -29,7 +29,7 @@ export default function Category() {
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden border b-8 rounded-lg bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                                     <img
                                         alt="Olive drab green insulated bottle with flared screw lid and flat top."
-                                        src="src/assets/Crd-2.PNG"
+                                        src="https://i.etsystatic.com/28180041/r/il/2f3a61/5466266289/il_794xN.5466266289_9uyu.jpg"
                                         className="h-full w-full object-cover object-center group-hover:opacity-65"
                                     />
                                     <h3 className="mt-2 text-lg text-gray-700 p-2 font-semibold flex justify-center">
@@ -43,7 +43,7 @@ export default function Category() {
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden border b-8 rounded-lg bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                                     <img
                                         alt="Person using a pen to cross a task off a productivity paper card."
-                                        src="src/assets/Crd-3.PNG"
+                                        src="https://i.etsystatic.com/51464338/r/il/99f64f/6638267541/il_794xN.6638267541_hupq.jpg"
                                         className="h-full w-full object-cover object-center group-hover:opacity-65"
                                     />
                                     <h3 className="mt-2 text-lg text-gray-700 p-2 font-semibold flex justify-center">
@@ -57,7 +57,7 @@ export default function Category() {
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden border b-8 rounded-lg bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                                     <img
                                         alt="Hand holding black machined steel mechanical pencil with brass tip and top."
-                                        src="src/assets/Crd-4.PNG"
+                                        src="https://i.etsystatic.com/20595428/r/il/7d6737/4040126572/il_794xN.4040126572_akxy.jpg"
                                         className="h-full w-full object-cover object-center group-hover:opacity-65"
                                     />
                                     <h3 className="mt-2 text-lg text-gray-700 p-2 font-semibold flex justify-center">
@@ -71,7 +71,7 @@ export default function Category() {
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden border b-8 rounded-lg bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                                     <img
                                         alt="Hand holding black machined steel mechanical pencil with brass tip and top."
-                                        src="src/assets/Crd-5.PNG"
+                                        src="https://i.etsystatic.com/51351279/r/il/ce3703/6305195807/il_794xN.6305195807_9a6b.jpg"
                                         className="h-full w-full object-cover object-center group-hover:opacity-65"
                                     />
                                     <h3 className="mt-2 text-lg text-gray-700 p-2 font-semibold flex justify-center">
@@ -100,7 +100,7 @@ export default function Category() {
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                     <img
                                         alt="Front of men's Basic Tee in black."
-                                        src="src/assets/pg-1.PNG"
+                                        src="https://i.etsystatic.com/49172423/r/il/ea6a3b/6221926698/il_300x300.6221926698_j1d6.jpg"
                                         className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                     />
                                 </div>
@@ -110,7 +110,7 @@ export default function Category() {
                                             <h3 className="text-sm text-gray-700">
                                                 <img
                                                     alt="art"
-                                                    src="src/assets/icon-1.PNG"
+                                                    src="https://i.etsystatic.com/isla/542c4d/72515898/isla_200x200.72515898_bbvxwclh.jpg?version=0"
                                                     className="h-12 w-12 rounded-full object-cover object-center lg:h-12 lg:w-12"
                                                 />
                                             </h3>
@@ -129,7 +129,7 @@ export default function Category() {
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                     <img
                                         alt="Front of men's Basic Tee in black."
-                                        src="src/assets/pg-2.PNG"
+                                        src="https://i.etsystatic.com/49172423/c/2518/1999/0/0/il/30ee5e/6241561307/il_300x300.6241561307_lgef.jpg"
                                         className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                     />
                                 </div>
@@ -139,7 +139,7 @@ export default function Category() {
                                             <h3 className="text-sm text-gray-700">
                                                 <img
                                                     alt="stitch"
-                                                    src="src/assets/icon-2.PNG"
+                                                    src="https://i.etsystatic.com/isla/31627d/72644713/isla_200x200.72644713_rigo6vy7.jpg?version=0"
                                                     className="h-12 w-12 rounded-full object-cover object-center lg:h-12 lg:w-12"
                                                 />
                                             </h3>
@@ -158,7 +158,7 @@ export default function Category() {
                                 <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                                     <img
                                         alt="Front of men's Basic Tee in black."
-                                        src="src/assets/pg-3.PNG"
+                                        src="https://i.etsystatic.com/43072277/r/il/99d127/5410012265/il_794xN.5410012265_dycx.jpg"
                                         className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                                     />
                                 </div>
@@ -168,7 +168,7 @@ export default function Category() {
                                             <h3 className="text-sm text-gray-700">
                                                 <img
                                                     alt="patel"
-                                                    src="src/assets/icon-3.PNG"
+                                                    src="https://i.etsystatic.com/isla/952df9/61013826/isla_200x200.61013826_kffxu9bn.jpg?version=0"
                                                     className="h-12 w-12 rounded-full object-cover object-center lg:h-12 lg:w-12"
                                                 />
                                             </h3>
