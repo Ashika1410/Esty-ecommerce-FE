@@ -13,7 +13,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Tall slender porcelain bottle with natural clay textured body and cork stopper."
-                    src="/src/assets/cd-1.PNG"
+                    src="src\assets\cd-1.PNG"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -27,7 +27,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Olive drab green insulated bottle with flared screw lid and flat top."
-                    src="/src/assets/cd-2.PNG"
+                    src="src\assets\cd-2.PNG"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -41,7 +41,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Person using a pen to cross a task off a productivity paper card."
-                    src="/src/assets/cd-3.PNG"
+                    src="src\assets\cd-3.PNG"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -55,7 +55,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Hand holding black machined steel mechanical pencil with brass tip and top."
-                    src="/src/assets/cd-4.PNG"
+                    src="src\assets\cd-4.PNG"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -69,7 +69,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Hand holding black machined steel mechanical pencil with brass tip and top."
-                    src="/src/assets/cd-5.PNG"
+                    src="src\assets\cd-5.PNG"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
@@ -83,7 +83,7 @@ export default function HomePage() {
                 <div className="aspect-h-1 aspect-w-1 w-32 overflow-hidden rounded-full bg-white-100 xl:aspect-h-8 xl:aspect-w-7">
                   <img
                     alt="Hand holding black machined steel mechanical pencil with brass tip and top."
-                    src="./src/assets/cd-6.PNG"
+                    src="src\assets\cd-6.PNG"
                     className="h-32 w-32 object-cover object-center group-hover:opacity-65"
                   />
                 </div>
