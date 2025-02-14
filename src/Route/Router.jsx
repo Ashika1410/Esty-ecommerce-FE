@@ -17,8 +17,12 @@ import Autumn from '../DetailPage/Autumn';
 import Bags from '../DetailPage/Bags';
 import Country from '../UI/Components/Country';
 import Kids from '../DetailPage/Kids';
-import PotraitesDescription from '../Description/PotraitesDescription';
-
+import PotraitesDetail from '../Description/PotraitesDetail';
+import WeddingDetail from '../Description/WeddingDetail';
+import HouseDetail from '../Description/HouseDetail';
+import GardenDetail from '../Description/GardenDetail';
+import BirthdayDetail from '../Description/BirthdayDetail';
+import BabyDetail from '../Description/BabyDetail';
 
 const router = createBrowserRouter([
   {
@@ -94,8 +98,28 @@ const router = createBrowserRouter([
     element: <Country />
   },
   {
-    path:'/potraitesdescription/:productId',
-    element: <PotraitesDescription />
+    path:'/potraitesdetail/:productId',
+    element: <PotraitesDetail />
+  },
+  {
+    path: '/babydetail/:productId',
+    element: <BabyDetail />
+  },
+  {
+    path: '/birthdaydetail/:productId',
+    element: <BirthdayDetail />
+  },
+  {
+    path: '/gardendetail/:productId',
+    element: <GardenDetail />
+  },
+  {
+    path: '/housedetail/:productId',
+    element: <HouseDetail />
+  },
+  {
+    path: '/weddingdetail/:productId',
+    element: <WeddingDetail />
   }
 ]);
 export default router;

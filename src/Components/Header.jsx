@@ -114,7 +114,7 @@ export default function Navbar() {
               <button type="button" className='h-12 rounded-lg bg-transparent'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f10404" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg></button>
             </a>
-            <a href="/">
+            <a href="/gifts">
               <button type="button" className='h-12 rounded-lg bg-transparent'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f1046b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1" /><path d="M12 8v13" /><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" /><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" /></svg></button>
             </a>
@@ -135,19 +135,19 @@ export default function Navbar() {
 
               <PopoverGroup className="hidden lg:flex lg:gap-x-12 object-cover object-center group-hover:opacity-65 mt-2">
 
-                <a href="#" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
+                <a href="/gifts" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
                   <i className="fa-solid fa-gift"></i>Gift Mode
                 </a>
-                <a href="/potraties" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
+                <a href="/potraites" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
                   Creative Potraites
                 </a>
-                <a href="#" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
+                <a href="/house" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
                   Home Favorites
                 </a>
-                <a href="#" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
+                <a href="/" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
                   Fashion Finds
                 </a>
-                <a href="#" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
+                <a href="/" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
                   Registry
                 </a>
               </PopoverGroup>
@@ -160,7 +160,7 @@ export default function Navbar() {
                   <div className="-my-6 divide-y divide-gray-500/10">
                     <div className="py-6">
                       <a
-                        href="/giftmode"
+                        href="/gifts"
                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-900"
                       >
                         <i className="fa-solid fa-gift"></i>Gift Mode
@@ -172,19 +172,19 @@ export default function Navbar() {
                         Creative Potraites
                       </a>
                       <a
-                        href="/favorities"
+                        href="/house"
                         className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-900 hover:bg-gray-900"
                       >
                         Home Favorites
                       </a>
                       <a
-                        href="/fashion"
+                        href="/"
                         className="-mx-3 block rounded-full px-3 py-2 text-base font-medium leading-7 text-gray-700 hover:bg-gray-900"
                       >
                         Fashion Finds
                       </a>
                       <a
-                        href="/registry"
+                        href="/"
                         className="-mx-3 block rounded-full px-3 py-2 text-base font-medium leading-7 text-gray-700 hover:bg-gray-900"
                       >
                         Registry
