@@ -18,9 +18,9 @@ export default function Blog() {
                                     />
                                 </a>
                                 <div className="p-3">
-                                    <h5 className="mb-3 font-normal text-gray-700 dark:text-gray-400">Shopping Guides</h5>
-                                    <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">9 Comfy Throws for Cosy Autumn Vibes</p>
-                                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Embrace the snuggling season with stylish throws that will warm your hearts.</p>
+                                    <h5 className="mb-3 font-normal text-gray-700">Shopping Guides</h5>
+                                    <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">9 Comfy Throws for Cosy Autumn Vibes</p>
+                                    <p className="mb-3 font-normal text-gray-700">Embrace the snuggling season with stylish throws that will warm your hearts.</p>
                                 </div>
                             </div>
                             <div className="transition duration-100 ease-in-out w-full max-w-xl bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 transform hover:-translate-y-1 hover:scale-110 ...">
@@ -32,9 +32,9 @@ export default function Blog() {
                                     />
                                 </a>
                                 <div className="p-3">
-                                    <h5 className="mb-3 font-normal text-gray-700 dark:text-gray-400">Shopping Guides</h5>
-                                    <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">14 Beautiful Bags That Express Your Unique Style</p>
-                                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400"> Amp up your fashion game with bags that perfectly match your aesthetic.</p>
+                                    <h5 className="mb-3 font-normal text-gray-700">Shopping Guides</h5>
+                                    <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">14 Beautiful Bags That Express Your Unique Style</p>
+                                    <p className="mb-3 font-normal text-gray-700"> Amp up your fashion game with bags that perfectly match your aesthetic.</p>
                                 </div>
                             </div>
                             <div className="transition duration-100 ease-in-out w-full max-w-xl bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 transform hover:-translate-y-1 hover:scale-110 ...">
@@ -46,9 +46,9 @@ export default function Blog() {
                                     />
                                 </a>
                                 <div className="p-3">
-                                    <h5 className="mb-3 font-normal text-gray-700 dark:text-gray-400">Gift Ideas</h5>
-                                    <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">The Best Gift Ideas for Kids of All Ages</p>
-                                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Shop the sweetest surprises for all little ones in your family–these gifts for kids will definitely earn you some brownie points.</p>
+                                    <h5 className="mb-3 font-normal text-gray-700">Gift Ideas</h5>
+                                    <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900">The Best Gift Ideas for Kids of All Ages</p>
+                                    <p className="mb-3 font-normal text-gray-700">Shop the sweetest surprises for all little ones in your family–these gifts for kids will definitely earn you some brownie points.</p>
                                 </div>
                             </div>
                         </div>
