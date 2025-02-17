@@ -105,21 +105,15 @@ export default function Category() {
                                     />
                                 </div>
                                 <div className="mt-3 flex justify-start p-2">
-                                    <a href="/art">
-                                        <div>
-                                            <h3 className="text-sm text-gray-700">
-                                                <img
-                                                    alt="art"
-                                                    src="https://i.etsystatic.com/isla/542c4d/72515898/isla_200x200.72515898_bbvxwclh.jpg?version=0"
-                                                    className="h-12 w-12 rounded-full object-cover object-center lg:h-12 lg:w-12"
-                                                />
-                                            </h3>
+                                    <a href="/threadart">
+                                        <div className="flex flex-row">
+                                            <img
+                                                alt="art"
+                                                src="https://i.etsystatic.com/isla/542c4d/72515898/isla_200x200.72515898_bbvxwclh.jpg?version=0"
+                                                className="h-12 w-12 rounded-full object-cover object-center lg:h-12 lg:w-12"
+                                            />
+                                            <h3 className="text-2xl font-normal px-4 text-gray-600">  ThreadsofindiaArt </h3>
                                         </div>
-                                        <span
-                                            aria-hidden="true"
-                                            className="text-sm font-medium text-gray-900"
-                                        />
-                                        ThreadsofindiaArt
                                     </a>
                                 </div>
                             </div>
@@ -134,21 +128,15 @@ export default function Category() {
                                     />
                                 </div>
                                 <div className="mt-3 flex justify-start p-2">
-                                    <a href="/stitch">
-                                        <div>
-                                            <h3 className="text-sm text-gray-700">
-                                                <img
-                                                    alt="stitch"
-                                                    src="https://i.etsystatic.com/isla/31627d/72644713/isla_200x200.72644713_rigo6vy7.jpg?version=0"
-                                                    className="h-12 w-12 rounded-full object-cover object-center lg:h-12 lg:w-12"
-                                                />
-                                            </h3>
+                                    <a href="/stitchart">
+                                        <div className="flex flex-row">
+                                            <img
+                                                alt="stitch"
+                                                src="https://i.etsystatic.com/isla/31627d/72644713/isla_200x200.72644713_rigo6vy7.jpg?version=0"
+                                                className="h-12 w-12 rounded-full object-cover object-center lg:h-12 lg:w-12"
+                                            />
+                                            <h3 className="text-2xl font-normal px-4 text-gray-600"> Thefantasystitch </h3>
                                         </div>
-                                        <span
-                                            aria-hidden="true"
-                                            className="text-sm font-medium text-gray-900"
-                                        />
-                                        Thefantasystitch
                                     </a>
                                 </div>
                             </div>
@@ -163,21 +151,15 @@ export default function Category() {
                                     />
                                 </div>
                                 <div className="mt-3 flex justify-start p-2">
-                                    <a href="/patel">
-                                        <div>
-                                            <h3 className="text-sm text-gray-700">
-                                                <img
-                                                    alt="patel"
-                                                    src="https://i.etsystatic.com/isla/952df9/61013826/isla_200x200.61013826_kffxu9bn.jpg?version=0"
-                                                    className="h-12 w-12 rounded-full object-cover object-center lg:h-12 lg:w-12"
-                                                />
-                                            </h3>
+                                    <a href="/patelart">
+                                        <div className="flex flex-row">
+                                            <img
+                                                alt="patel"
+                                                src="https://i.etsystatic.com/isla/952df9/61013826/isla_200x200.61013826_kffxu9bn.jpg?version=0"
+                                                className="h-12 w-12 rounded-full object-cover object-center lg:h-12 lg:w-12"
+                                            />
+                                            <h3 className="text-2xl font-normal px-4 text-gray-600"> ShivaniPatelArt </h3>
                                         </div>
-                                        <span
-                                            aria-hidden="true"
-                                            className="text-sm font-medium text-gray-900"
-                                        />
-                                        ShivaniPatelArt
                                     </a>
                                 </div>
                             </div>

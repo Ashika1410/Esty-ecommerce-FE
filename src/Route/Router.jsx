@@ -20,35 +20,44 @@ import HouseDetail from '../Description/HouseDetail';
 import GardenDetail from '../Description/GardenDetail';
 import BirthdayDetail from '../Description/BirthdayDetail';
 import BabyDetail from '../Description/BabyDetail';
+import ThreadArt from '../DetailPage/ThreadArt';
+import StitchArt from '../DetailPage/StitchArt';
+import PatelArt from '../DetailPage/PatelArt';
+import Anniversary from '../DetailPage/Anniversary';
+import HerGifts from '../DetailPage/HerGifts';
+import HisGifts from '../DetailPage/HisGifts';
+import Personalised from '../DetailPage/Personalised';
 
 const router = createBrowserRouter(
   [
-    {
-      path: "/",
-      element: <App />,
-      children: [
-        { path: "/potraites", element: <Potraites />, },
-        { path: "/birthday", element: <Birthday />, },
-        { path: "/wedding", element: <Wedding />, },
-        { path: "/house", element: <Home />, },
-        { path: "/garden", element: <Garden />, },
-        { path: "/baby", element: <Baby />, },
-        { path: '/signin', element: <SignIn /> },
-        { path: '/cart', element: <Cart /> },
-        { path: '/checkout', element: <Checkout /> },
-        { path: '/wishlist', element: <Wishlist /> },
-        { path: '/autumn', element: <Autumn /> },
-        { path: '/bags', element: <Bags /> },
-        { path: '/kids', element: <Kids /> },
-        { path: '/country', element: <Country /> },
-        { path: '/potraitesdetail/:productId', element: <PotraitesDetail /> },
-        { path: '/babydetail/:productId', element: <BabyDetail /> },
-        { path: '/birthdaydetail/:productId', element: <BirthdayDetail /> },
-        { path: '/gardendetail/:productId', element: <GardenDetail /> },
-        { path: '/housedetail/:productId', element: <HouseDetail /> },
-        { path: '/weddingdetail/:productId', element: <WeddingDetail /> }
-      ]
-    }
+    { path: "/", element: <App />, },
+    { path: "/potraites", element: <Potraites />, },
+    { path: "/birthday", element: <Birthday />, },
+    { path: "/wedding", element: <Wedding />, },
+    { path: "/house", element: <Home />, },
+    { path: "/garden", element: <Garden />, },
+    { path: "/baby", element: <Baby />, },
+    { path: '/signin', element: <SignIn /> },
+    { path: '/cart', element: <Cart /> },
+    { path: '/checkout', element: <Checkout /> },
+    { path: '/wishlist', element: <Wishlist /> },
+    { path: '/autumn', element: <Autumn /> },
+    { path: '/bags', element: <Bags /> },
+    { path: '/kids', element: <Kids /> },
+    { path: '/country', element: <Country /> },
+    { path: '/potraitesdetail/:productId', element: <PotraitesDetail /> },
+    { path: '/babydetail/:productId', element: <BabyDetail /> },
+    { path: '/birthdaydetail/:productId', element: <BirthdayDetail /> },
+    { path: '/gardendetail/:productId', element: <GardenDetail /> },
+    { path: '/housedetail/:productId', element: <HouseDetail /> },
+    { path: '/weddingdetail/:productId', element: <WeddingDetail /> },
+    { path: '/threadart', element: <ThreadArt /> },
+    { path: '/stitchart', element: <StitchArt /> },
+    { path: '/patelart', element: <PatelArt /> },
+    { path: '/anniversary', element: <Anniversary /> },
+    { path: '/hergifts', element: <HerGifts /> },
+    { path: '/hisgifts', element: <HisGifts /> },
+    { path: '/personal', element: <Personalised /> }
   ],
   {
     future: {
