@@ -6,16 +6,19 @@ import HomePage from "./Components/Home";
 import Category from "./Components/Category";
 import Blog from "./Components/Blog";
 import About from "./Components/About";
+import { Outlet } from "react-router-dom";
 
 export default function App() {
   return (
     <>
-      <Navbar />
-      <HomePage />
-      <Category />
-      <Blog />
-      <About />
-      <FooterPage />
+      <Outlet />
+        <Navbar />
+        <HomePage />
+        <Category />
+        <Blog />
+        <About />
+        <FooterPage />
+   
     </>
   );
 }
