@@ -12,7 +12,6 @@ import Checkout from '../UI/Components/Checkout';
 import Wishlist from '../UI/Components/Wishlist';
 import Autumn from '../DetailPage/Autumn';
 import Bags from '../DetailPage/Bags';
-import Country from '../UI/Components/Country';
 import Kids from '../DetailPage/Kids';
 import PotraitesDetail from '../Description/PotraitesDetail';
 import WeddingDetail from '../Description/WeddingDetail';
@@ -44,7 +43,6 @@ const router = createBrowserRouter(
     { path: '/autumn', element: <Autumn /> },
     { path: '/bags', element: <Bags /> },
     { path: '/kids', element: <Kids /> },
-    { path: '/country', element: <Country /> },
     { path: '/potraitesdetail/:productId', element: <PotraitesDetail /> },
     { path: '/babydetail/:productId', element: <BabyDetail /> },
     { path: '/birthdaydetail/:productId', element: <BirthdayDetail /> },

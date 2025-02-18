@@ -1,13 +1,14 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { useState } from 'react';
 import { Dialog, DialogPanel, PopoverGroup, } from '@headlessui/react';
 import SearchComponent from '../UI/Components/SearchComponent';
 import { useSelector } from "react-redux";
 import { TfiMenuAlt } from "react-icons/tfi";
+import Country from '../UI/Components/Country';
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [searchProduct, setSearchProduct] = useState('');
   const SearchUser = (event) => {
     setSearchProduct(event.target.value);
@@ -36,7 +37,7 @@ export default function Navbar() {
                 <div className="py-1">
                   <MenuItem>
                     <a
-                      href="#"
+                      href="/hergifts"
                       className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
                       Jewellary
@@ -44,7 +45,7 @@ export default function Navbar() {
                   </MenuItem>
                   <MenuItem>
                     <a
-                      href="#"
+                      href="/baby"
                       className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
                       Clothings
@@ -54,7 +55,7 @@ export default function Navbar() {
                 <div className="py-1">
                   <MenuItem>
                     <a
-                      href="#"
+                      href="/wedding"
                       className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
                       Wedding
@@ -62,7 +63,7 @@ export default function Navbar() {
                   </MenuItem>
                   <MenuItem>
                     <a
-                      href="#"
+                      href="/hisgifts"
                       className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
                       Accessories
@@ -72,7 +73,7 @@ export default function Navbar() {
                 <div className="py-1">
                   <MenuItem>
                     <a
-                      href="#"
+                      href="/house"
                       className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
                       Home & Living
@@ -80,7 +81,7 @@ export default function Navbar() {
                   </MenuItem>
                   <MenuItem>
                     <a
-                      href="#"
+                      href="/potraites"
                       className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
                       Art & collabities
@@ -90,7 +91,7 @@ export default function Navbar() {
                 <div className="py-1">
                   <MenuItem>
                     <a
-                      href="#"
+                      href="/birthday"
                       className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900"
                     >
                       Book,Filim & Music
@@ -106,10 +107,10 @@ export default function Navbar() {
             <a href="/signin">
               <button type='sign-in' className='w-32 h-12 text-lg text-white rounded-lg bg-blue-600 hover:bg-blue-300'><p>Sign-in</p></button>
             </a>
-            <a href="/country">
-              <button type="button" className='h-12 rounded-lg bg-transparent'>
+            {/* <a href="/"> */}
+              <button type="button"  onClick={() => setIsOpen(true)} className='h-12 rounded-lg bg-transparent'> {isOpen && (<Country />)} 
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0414f1" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-flag"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" /><line x1="4" x2="4" y1="22" y2="15" /></svg></button>
-            </a>
+            {/* </a> */}
             <a href="/wishlist">
               <button type="button" className='h-12 rounded-lg bg-transparent'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f10404" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-heart"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg></button>
@@ -135,7 +136,7 @@ export default function Navbar() {
 
               <PopoverGroup className="hidden lg:flex lg:gap-x-12 object-cover object-center group-hover:opacity-65 mt-2">
 
-                <a href="/gifts" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
+                <a href="/hisgifts" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
                   <i className="fa-solid fa-gift"></i>Gift Mode
                 </a>
                 <a href="/potraites" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
@@ -144,10 +145,10 @@ export default function Navbar() {
                 <a href="/house" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
                   Home Favorites
                 </a>
-                <a href="/" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
+                <a href="/hergifts" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
                   Fashion Finds
                 </a>
-                <a href="/" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
+                <a href="/anniversary" className="text-sm font-medium leading-6 text-gray-900 hover:bg-gray-200 rounded-full p-2">
                   Registry
                 </a>
               </PopoverGroup>

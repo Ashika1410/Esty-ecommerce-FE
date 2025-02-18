@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { removeFromWishlist, clearWishlist } from "../../Redux/WishlistSlice";
 import { FaTrashAlt } from "react-icons/fa";
 import { addItem } from "../../Redux/CartSlice";
+import Navbar from "../../Components/Header";
 
 const WishList = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,8 @@ const WishList = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="min-h-screen bg-white p-4">
       <div className="container mx-auto">
         <h1 className="text-3xl font-bold mb-4 text-orange-400 text-center">
@@ -80,6 +83,7 @@ const WishList = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
