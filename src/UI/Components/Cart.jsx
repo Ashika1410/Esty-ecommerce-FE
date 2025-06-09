@@ -1,44 +1,147 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { removeItem, updateItem, clearCart } from "../../Redux/CartSlice";
-import { FaTrashAlt } from "react-icons/fa";
-import { addToWishlist } from "../../Redux/WishlistSlice";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { FaTrashAlt, FaRegHeart } from "react-icons/fa";
 import Navbar from "../../Components/Header";
-import { FaRegHeart } from "react-icons/fa";
+import { clearCart } from "../../Redux/CartSlice";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [cart, setCart] = useState([]);
+  const [searchParams] = useSearchParams();
+  const productID = searchParams.get("id");
   const items = useSelector((state) => state.cart.items);
-  const totalAmount = items.reduce((total, item) => {
-    const parts = item.price.split(/[\s(]/);
-    const numericPrice = parseFloat(parts[0].replace(/[^0-9.]/g, "")) || 0;
-    return total + numericPrice * item.quantity;
-  }, 0);
 
-  const handleRemove = (id) => {
-    dispatch(removeItem(id));
-  };
+  useEffect(() => {
+    const fetchCartItems = async () => {
+      try {
+        const response = await fetch(`http://localhost:7702/cart/all`, {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
 
-  const handleUpdate = (id, newQuantity) => {
-    if (newQuantity < 1) {
-      alert("Quantity cannot be less than 1");
+        if (!response.ok) throw new Error("Failed to fetch cart items");
+
+        const data = await response.json();
+        console.log("Fetched Cart Items:", data);
+
+        if (Array.isArray(data.result)) {
+          setCart(data.result.filter((item) => item.productID !== null));
+        } else {
+          console.error("Unexpected API response format:", data);
+          setCart([]);
+        }
+      } catch (error) {
+        console.error("Error fetching cart items:", error);
+        setCart([]);
+      }
+    };
+
+    fetchCartItems();
+  }, []);
+
+  const handleUpdate = async (productid, quantity) => {
+    if (!productid || quantity < 1) {
+      console.error("Invalid productID or quantity:", { productID, quantity });
+      alert("Invalid Product ID or Quantity");
       return;
     }
-    dispatch(updateItem({ id, quantity: newQuantity }));
-  };
-  const handleAddToWishlist = (item) => {
-    dispatch(addToWishlist(item));
+  
+    try {
+      console.log("Sending API request:", {
+        url: `http://localhost:7702/cart/${productID}`,
+        body: JSON.stringify({ quantity }),
+      });
+  
+      const response = await fetch(`http://localhost:7702/cart/${productID}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ quantity }),
+      });
+  
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Error updating cart:", errorText);
+        return;
+      }
+  
+      const updatedItem = await response.json();
+      console.log("Cart updated successfully:", updatedItem);
+  
+      setCart((prevCart) =>
+        prevCart.map((item) =>
+          item.productid === productID ? { ...item, quantity } : item
+        )
+      );
+    } catch (error) {
+      console.error("Error updating cart:", error);
+    }
+  };  
+  
+  const handleRemove = async (cartID) => {
+    try {
+      const response = await fetch(`http://localhost:7702/cart/${cartID}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      });
+      if (!response.ok) throw new Error("Failed to remove item");
+      const data = await response.json();
+      console.log("Item removed:", data);
+      setCart((prevCart) => prevCart.filter((item) => item.cartID !== cartID));
+    } catch (error) {
+      console.error("Error removing item:", error);
+    }
   };
 
-  const handleClearCart = () => {
-    dispatch(clearCart());
+  const handleAddToWishlist = async (product) => {
+    if (!product || !product.productID) {
+      console.error("Invalid product data:", product);
+      return;
+    }
+    try {
+      const response = await fetch("http://localhost:7702/wishlist/add", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          productid: product.productID,
+        }),
+      });
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Error response from server:", errorText);
+        return;
+      }
+      const data = await response.json();
+      console.log("Wishlist Add Response:", data);
+    } catch (error) {
+      console.error("Error adding product to Wishlist:", error);
+    }
+  };
+
+  const handleClearCart = async () => {
+    try {
+      const response = await fetch(`http://localhost:7702/cart/removeall`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      });
+      if (!response.ok) throw new Error("Failed to clear cart");
+      const data = await response.json();
+      console.log("Cart cleared:", data);
+      setCart([]);
+      dispatch(clearCart());
+    } catch (error) {
+      console.error("Error clearing cart:", error);
+    }
   };
 
   const handleProceedToBuy = () => {
-    if (items.length === 0) {
-      alert("Your cart is empty. Add items before proceeding to buy!");
+    if (cart.length === 0) {
+      alert("Your cart is empty. Add items before proceeding to checkout!");
       return;
     }
     navigate("/checkout");
@@ -49,76 +152,81 @@ const Cart = () => {
       <Navbar />
       <div className="min-h-screen bg-white p-4">
         <div className="container mx-auto">
-          <h1 className="text-3xl font-bold mb-4 text-orange-400 text-center">Esty Shopping Cart</h1>
+          <h1 className="text-3xl font-bold mb-4 text-orange-400 text-center">
+            Etsy Shopping Cart
+          </h1>
           <div className="border p-4 rounded-lg shadow-lg bg-gray-200">
             <h2 className="text-2xl font-bold mb-4 text-black">Your Cart</h2>
-            {items.length === 0 ? (
-              <p className="text-black">Your cart is empty.</p>
-            ) : (
-              <>
-                {items.map((item) => (
-                  <div key={item.id} className="flex justify-between items-center my-4 border-b pb-4">
+            {cart.length > 0 ? (
+              cart.map((item) => (
+                <div
+                  key={item.cartID}
+                  className="flex justify-between items-center my-4 border-b pb-4 px-6"
+                >
+                  <a href={`/product/${item.productID}`}>
                     <img
-                      src={item.imageSrc}
-                      alt={item.name}
-                      className="h-20 w-20 object-cover rounded-lg"
+                      src={item.product_imgSrc || "fallback-image.jpg"}
+                      alt={item.product_name || "Unknown"}
+                      className="h-36 w-36 object-cover rounded-lg"
                     />
-                    <div className="flex flex-col">
-                      <h3 className="text-lg font-semibold">{item.name}</h3>
-                      <p className="text-black font-semibold">{item.price}</p>
-                      <p className="text-sm text-gray-600">{item.vendors}</p>
-                      <div className="flex items-center gap-2 mt-2">
-                      <button
-                        className="px-6 py-2 bg-white text-gray-800 rounded-lg hover:bg-gray-300 transition"
-                        onClick={() => handleAddToWishlist(item)}
-                      >
-                        <FaRegHeart />
-                      </button>
-                        <button
-                          onClick={() => handleUpdate(item.id, item.quantity - 1)}
-                          className="bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 transition"
-                        >
-                          -
-                        </button>
-                        <div className="flex flex-col items-center">
-                          <span className="text-lg font-bold text-gray-800 bg-gray-100 py-2 px-4 rounded-lg border">
-                            {item.quantity}
-                          </span>
-                        </div>
-                        <button
-                          onClick={() => handleUpdate(item.id, item.quantity + 1)}
-                          className="bg-green-500 text-white px-3 py-2 rounded-lg hover:bg-green-600 transition"
-                        >
-                          +
-                        </button>
-                      </div>
+                  </a>
+                  <div className="flex flex-col">
+                    <h3 className="text-lg font-semibold">{item.product_name || "Unknown Product"}</h3>
+                    <p className="text-black font-semibold">
+                      ₹{item.product_price ?? "N/A"}
+                    </p>
+                    <p className="text-sm text-gray-600">{item.product_vendors || "Unknown Vendor"}</p>
+                  </div>
+                  <div className="flex items-center gap-2 mt-2">
+                    <button
+                      className="px-6 py-2 bg-white text-gray-800 rounded-lg hover:bg-gray-300 transition"
+                      onClick={() => handleAddToWishlist(item)}
+                    > <FaRegHeart /> </button>
+                    <button
+                      onClick={() => handleUpdate(item.productID, item.Quantity - 1)}
+                      className="bg-red-500 text-white px-3 py-2 rounded-lg hover:bg-red-600 transition"
+                    > - </button>
+                    <div className="flex flex-col items-center">
+                      <span className="text-lg font-bold text-gray-800 bg-gray-100 py-2 px-4 rounded-lg border">
+                        {item.Quantity}
+                      </span>
                     </div>
                     <button
-                      onClick={() => handleRemove(item.id)}
-                      className="text-red-500 hover:text-red-700"
-                    >
-                      <FaTrashAlt size={20} />
-                    </button>
+                      onClick={() => handleUpdate(item.productID, item.Quantity + 1)}
+                      className="bg-green-500 text-white px-3 py-2 rounded-lg hover:bg-green-600 transition"
+                    > + </button>
                   </div>
-                ))}
-                <div className="flex justify-between items-center mt-6">
-                  <span className="text-lg font-bold text-black">Total: ₹{totalAmount}</span>
-                  <div className="flex gap-4">
-                    <button
-                      className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600"
-                      onClick={handleClearCart}>
-                      Clear Cart
-                    </button>
-                    <button
-                      onClick={handleProceedToBuy}
-                      className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
-                    >
-                      Proceed to Checkout
-                    </button>
-                  </div>
+                  <button
+                    onClick={() => handleRemove(item.cartID)}
+                    className="text-red-500 hover:text-red-700"
+                  > <FaTrashAlt size={20} />
+                  </button>
                 </div>
-              </>
+              ))
+            ) : (
+              <p className="text-black">Your cart is empty.</p>
             )}
+
+            <div className="flex justify-between items-center mt-6">
+              <span className="text-lg font-bold text-black">
+                Total: ₹
+                {cart.reduce((total, item) => total + (item.product_price || 0) * (item.Quantity || 1), 0)}
+              </span>
+              <div className="flex gap-4">
+                <button
+                  className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600"
+                  onClick={handleClearCart}
+                >
+                  Clear Cart
+                </button>
+                <button
+                  onClick={handleProceedToBuy}
+                  className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
+                >
+                  Proceed to Checkout
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
