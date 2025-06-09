@@ -1,27 +1,54 @@
-import Product from "../UI/Components/Product";
+import { useState, useEffect } from "react";
 import FooterPage from "../Components/Footer";
 import Navbar from "../Components/Header";
-import { PotraitesData } from "../Data/DetailPageData";
+import { useSearchParams } from "react-router-dom";
+import ProductCard from "../UI/Components/ProductCard";
 
-export default function Potraites() {
+export default function Potraites({ product }) {
+  const [products, setProducts] = useState([]);
+  const [searchParams] = useSearchParams();
+  const categoryId = searchParams.get("id");
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(`http://localhost:7702/product/category/${categoryId}`);
+        const result = await response.json();
+
+        if (result && Array.isArray(result.result)) {
+          setProducts(result.result);
+        } else {
+          console.error("Unexpected API response:", result);
+          setProducts([]);
+        }
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        setProducts([]);
+      }
+    };
+
+    fetchProducts();
+  }, [categoryId]);
   return (
     <>
-    <Navbar />
-      <div className="bg-white">
-        <h1 className="text-4xl font-semibold text-arial flex justify-center p-2 text-orange-500">
-          Check out the season's biggest trends
-        </h1>
-        <h2 className="text-2xl font-medium text-italic flex justify-center p-2 text-green-600">
-          Shop for Your Biggest Day !!
-        </h2>
-        <div className="mx-auto max-w-2xl px-2 py-2 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            {PotraitesData.map((product) => ( 
-              <Product key={product.id} product={product} />
-            ))} 
+      <Navbar />
+      <section>
+        <div className="bg-white container mx-auto py-6">
+          <h1 className="text-4xl font-semibold text-arial flex justify-center p-2 text-orange-500">
+            Check out the season's biggest trends
+          </h1>
+          <h2 className="text-2xl font-medium text-italic flex justify-center p-2 text-green-600">
+            Shop for Your Biggest Day !!
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+            {products.length > 0 ? (
+              products.map((product) => <ProductCard key={product.productID} product={product} />)
+            ) : (
+              <p className="text-center col-span-full">Loading products...</p>
+            )}
           </div>
         </div>
-      </div>
+      </section>
       <FooterPage />
     </>
   );

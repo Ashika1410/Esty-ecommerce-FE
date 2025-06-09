@@ -1,7 +1,7 @@
 import FooterPage from "../Components/Footer";
 import Navbar from "../Components/Header";
-import { HouseData } from "../Data/DetailPageData";
-import Product from "../UI/Components/Product";
+// import { HouseData } from "../Data/DetailPageData";
+// import Product from "../UI/Components/Product";
 
 export default function HerGifts () {
     return (
@@ -64,7 +64,7 @@ export default function HerGifts () {
                         </div>
                     </div>
                 </div>
-                <div className="bg-white">
+                {/* <div className="bg-white">
                     <h1 className="text-4xl font-semibold text-arial flex justify-center p-2 text-orange-500">
                         Check out the season's biggest trends
                     </h1>
@@ -78,7 +78,7 @@ export default function HerGifts () {
                             ))}
                         </div>
                     </div>
-                </div>
+                </div> */}
             </section>
         <FooterPage />
         </>

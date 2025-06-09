@@ -15,8 +15,7 @@ export default function App() {
         <Category />
         <Blog />
         <About />
-        <FooterPage />
-   
+        <FooterPage /> 
     </>
   );
 }
