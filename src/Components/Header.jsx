@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import { TfiMenuAlt } from "react-icons/tfi";
 import SearchComponent from '../UI/Components/SearchComponent';
@@ -6,6 +7,8 @@ import axios from 'axios';
 import { FaUserCircle } from "react-icons/fa";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { FiGift } from "react-icons/fi";
+
+const baseurl = import.meta.env.VITE_API_BASE_URL;
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,7 +21,7 @@ export default function Navbar() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:7702/login/logout", {
+      const response = await fetch(`${baseurl}/login/logout`, {
         method: "POST",
         credentials: "include",
       });
@@ -36,7 +39,7 @@ export default function Navbar() {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await axios.get(`http://localhost:7702/cart/all`);
+        const response = await axios.get(`https://e-commerce-back-end-iota.vercel.app/cart/all`);
         const cartItems = response.data;
         const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
         setTotalItems(totalQuantity);

@@ -1,8 +1,12 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 import Navbar from "../../Components/Header";
+
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const WishList = () => {
   const dispatch = useDispatch();
@@ -14,7 +18,7 @@ const WishList = () => {
   useEffect(() => {
     const fetchWishlistItems = async () => {
       try {
-        const response = await fetch(`http://localhost:7702/wishlist/all`, {
+        const response = await fetch(`${baseUrl}/wishlist/all`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -46,7 +50,7 @@ const WishList = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:7702/cart/add", {
+      const response = await fetch(`${baseUrl}/cart/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +76,7 @@ const WishList = () => {
 
   const handleRemove = async (wishlistID) => {
     try {
-      const response = await fetch(`http://localhost:7702/wishlist/${wishlistID}`, {
+      const response = await fetch(`${baseUrl}/wishlist/${wishlistID}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });
@@ -87,7 +91,7 @@ const WishList = () => {
 
   const handleClearWishlist = async () => {
     try {
-      const response = await fetch(`http://localhost:7702/wishlist/all`, {
+      const response = await fetch(`${baseUrl}/wishlist/all`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });

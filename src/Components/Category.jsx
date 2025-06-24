@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
 
+// eslint-disable-next-line no-unused-vars
+const baseurl = import.meta.env.VITE_API_BASE_URL;
+
 export default function Category() {
     const [data, setData] = useState([]);
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch("http://localhost:7702/category");
+            const response = await fetch(`https://e-commerce-back-end-iota.vercel.app/category`);
             const result = await response.json();
             // console.log("Full API Response:", result);
             if (result && Array.isArray(result.result)) {

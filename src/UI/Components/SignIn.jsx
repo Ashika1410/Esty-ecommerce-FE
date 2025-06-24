@@ -2,6 +2,8 @@ import Navbar from "../../Components/Header";
 import { useState } from "react";
 import { FaGoogle, FaGithub, FaFacebook } from "react-icons/fa";
 
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
+
 export default function SignIn() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [formData, setFormData] = useState({
@@ -21,7 +23,7 @@ export default function SignIn() {
 
     const handleLogin = async () => {
       try {
-        const response = await fetch("http://localhost:7702/user/check", {
+        const response = await fetch(`${baseUrl}/user/check`, {
           method: "POST",
           credentials: "include", 
         });
@@ -69,7 +71,7 @@ export default function SignIn() {
       console.log("Sending data to API:", userData);
 
       const response = await fetch(
-        isSignUp ? `http://localhost:7702/user/newuser` : `http://localhost:7702/user/check`,
+        isSignUp ? `${baseUrl}/user/newuser` : `${baseUrl}/user/check`,
         {
           method: "POST",
           headers: {
