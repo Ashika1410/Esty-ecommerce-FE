@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const PlaceOrder = () => {
   const navigate = useNavigate();
@@ -34,7 +37,7 @@ const PlaceOrder = () => {
     e.preventDefault(); // Prevent form from reloading
 
     try {
-      const response = await fetch("http://localhost:7702/order/all", {
+      const response = await fetch(`${baseUrl}/order/all`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { FaTrashAlt, FaRegHeart } from "react-icons/fa";
 import Navbar from "../../Components/Header";
 import { clearCart } from "../../Redux/CartSlice";
+
+const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -16,7 +19,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch(`http://localhost:7702/cart/all`, {
+        const response = await fetch(`${baseUrl}/cart/all`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -50,11 +53,11 @@ const Cart = () => {
   
     try {
       console.log("Sending API request:", {
-        url: `http://localhost:7702/cart/${productID}`,
+        url: `${baseUrl}/cart/${productID}`,
         body: JSON.stringify({ quantity }),
       });
   
-      const response = await fetch(`http://localhost:7702/cart/${productID}`, {
+      const response = await fetch(`${baseUrl}/cart/${productID}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +86,7 @@ const Cart = () => {
   
   const handleRemove = async (cartID) => {
     try {
-      const response = await fetch(`http://localhost:7702/cart/${cartID}`, {
+      const response = await fetch(`${baseUrl}/cart/${cartID}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });
@@ -102,7 +105,7 @@ const Cart = () => {
       return;
     }
     try {
-      const response = await fetch("http://localhost:7702/wishlist/add", {
+      const response = await fetch(`${baseUrl}/wishlist/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -125,7 +128,7 @@ const Cart = () => {
 
   const handleClearCart = async () => {
     try {
-      const response = await fetch(`http://localhost:7702/cart/removeall`, {
+      const response = await fetch(`${baseUrl}/cart/removeall`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });

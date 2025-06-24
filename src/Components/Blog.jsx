@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 
+const baseurl = import.meta.env.VITE_API_BASE_URL;
+
 export default function Blog() {
 
     const [data, setData] = useState([]);
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch("http://localhost:7702/category");
+            const response = await fetch(`${baseurl}/category`);
             const result = await response.json();
             // console.log("Full API Response:", result);
             if (result && Array.isArray(result.result)) {
