@@ -39,7 +39,7 @@ export default function Navbar() {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await axios.get(`https://e-commerce-back-end-iota.vercel.app/cart/all`);
+        const response = await fetch(`${baseurl}/cart/all`);
         const cartItems = response.data;
         const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
         setTotalItems(totalQuantity);
