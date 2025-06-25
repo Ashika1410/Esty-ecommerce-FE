@@ -1,0 +1,44 @@
+{
+    "routes": [
+        {
+            "src": "/",
+            "dest": "/"
+        },
+        {
+            "src": "/category/:id",
+            "dest": "/"
+        },
+        {
+            "src": "/login",
+            "dest": "/"
+        },
+        {
+            "src": "/cart",
+            "dest": "/"
+        },
+        {
+            "src": "/checkout",
+            "dest": "/"
+        },
+        {
+            "src": "/wishlist",
+            "dest": "/"
+        },
+        {
+            "src": "/autumn",
+            "dest": "/"
+        },
+        {
+            "src": "/bags",
+            "dest": "/"
+        },
+        {
+            "src": "/kids",
+            "dest": "/"
+        },
+        {
+            "src": "/product/:id",
+            "dest": "/"
+        }
+    ]
+}
