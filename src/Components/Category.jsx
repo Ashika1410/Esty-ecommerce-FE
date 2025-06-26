@@ -8,7 +8,7 @@ export default function Category() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch(`https://e-commerce-back-end-iota.vercel.app/category`);
+            const response = await fetch(`http://localhost:7702/api/category`);
             const result = await response.json();
             // console.log("Full API Response:", result);
             if (result && Array.isArray(result.result)) {

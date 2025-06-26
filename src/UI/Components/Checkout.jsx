@@ -37,7 +37,7 @@ const PlaceOrder = () => {
     e.preventDefault(); // Prevent form from reloading
 
     try {
-      const response = await fetch(`${baseUrl}/order/all`, {
+      const response = await fetch(`http://localhost:7702/api/order/all`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

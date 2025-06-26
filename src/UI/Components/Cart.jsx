@@ -19,7 +19,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch(`${baseUrl}/cart/all`, {
+        const response = await fetch(`http://localhost:7702/api/cart/all`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -57,7 +57,7 @@ const Cart = () => {
         body: JSON.stringify({ quantity }),
       });
   
-      const response = await fetch(`${baseUrl}/cart/${productID}`, {
+      const response = await fetch(`http://localhost:7702/api/cart/${productID}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const Cart = () => {
   
   const handleRemove = async (cartID) => {
     try {
-      const response = await fetch(`${baseUrl}/cart/${cartID}`, {
+      const response = await fetch(`http://localhost:7702/api/cart/${cartID}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });
@@ -105,7 +105,7 @@ const Cart = () => {
       return;
     }
     try {
-      const response = await fetch(`${baseUrl}/wishlist/add`, {
+      const response = await fetch(`http://localhost:7702/api/wishlist/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -128,7 +128,7 @@ const Cart = () => {
 
   const handleClearCart = async () => {
     try {
-      const response = await fetch(`${baseUrl}/cart/removeall`, {
+      const response = await fetch(`http://localhost:7702/api/cart/removeall`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });

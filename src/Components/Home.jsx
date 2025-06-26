@@ -9,7 +9,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`${baseurl}/category`);
+        const response = await fetch(`http://localhost:7702/api/category`);
         const result = await response.json();
         
         if (result && Array.isArray(result.result)) {

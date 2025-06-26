@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
     console.log("Adding product to cart:", product);
 
     try {
-      const response = await fetch(`${baseUrl}/cart/add`, {
+      const response = await fetch(`http://localhost:7702/api/cart/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const ProductCard = ({ product }) => {
     console.log("Adding product to wishlist:", product);
 
     try {
-      const response = await fetch(`${baseUrl}/wishlist/add`, {
+      const response = await fetch(`http://localhost:7702/api/wishlist/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

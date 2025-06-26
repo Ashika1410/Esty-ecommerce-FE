@@ -8,7 +8,7 @@ export default function Blog() {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch(`${baseurl}/category`);
+            const response = await fetch(`http://localhost:7702/api/category`);
             const result = await response.json();
             // console.log("Full API Response:", result);
             if (result && Array.isArray(result.result)) {

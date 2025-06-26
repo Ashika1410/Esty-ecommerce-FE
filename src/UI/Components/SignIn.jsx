@@ -23,7 +23,7 @@ export default function SignIn() {
 
     const handleLogin = async () => {
       try {
-        const response = await fetch(`${baseUrl}/user/check`, {
+        const response = await fetch(`http://localhost:7702/api/user/check`, {
           method: "POST",
           credentials: "include", 
         });
@@ -71,7 +71,7 @@ export default function SignIn() {
       console.log("Sending data to API:", userData);
 
       const response = await fetch(
-        isSignUp ? `${baseUrl}/user/newuser` : `${baseUrl}/user/check`,
+        isSignUp ? `http://localhost:7702/api/user/newuser` : `$http://localhost:7702/api/user/check`,
         {
           method: "POST",
           headers: {
