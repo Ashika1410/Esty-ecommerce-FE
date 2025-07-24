@@ -6,7 +6,7 @@ import { FaTrashAlt, FaRegHeart } from "react-icons/fa";
 import Navbar from "../../Components/Header";
 import { clearCart } from "../../Redux/CartSlice";
 
-const baseUrl = import.meta.env.VITE_API_BASE_URL;
+const baseurl = import.meta.env.VITE_API_BASE_URL;
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch(`http://localhost:7702/api/cart/all`, {
+        const response = await fetch(`${baseurl}api/cart/all`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -53,11 +53,11 @@ const Cart = () => {
   
     try {
       console.log("Sending API request:", {
-        url: `${baseUrl}/cart/${productID}`,
+        url: `${baseurl}/cart/${productID}`,
         body: JSON.stringify({ quantity }),
       });
   
-      const response = await fetch(`http://localhost:7702/api/cart/${productID}`, {
+      const response = await fetch(`${baseurl}api/cart/${productID}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const Cart = () => {
   
   const handleRemove = async (cartID) => {
     try {
-      const response = await fetch(`http://localhost:7702/api/cart/${cartID}`, {
+      const response = await fetch(`${baseurl}api/cart/${cartID}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });
@@ -105,7 +105,7 @@ const Cart = () => {
       return;
     }
     try {
-      const response = await fetch(`http://localhost:7702/api/wishlist/add`, {
+      const response = await fetch(`${baseurl}api/wishlist/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -128,7 +128,7 @@ const Cart = () => {
 
   const handleClearCart = async () => {
     try {
-      const response = await fetch(`http://localhost:7702/api/cart/removeall`, {
+      const response = await fetch(`${baseurl}api/cart/removeall`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });
