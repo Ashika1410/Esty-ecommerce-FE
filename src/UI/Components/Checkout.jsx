@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const baseurl = import.meta.env.VITE_API_BASE_URL;
+// const baseurl = import.meta.env.VITE_API_BASE_URL;
 
 const PlaceOrder = () => {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const PlaceOrder = () => {
     e.preventDefault(); // Prevent form from reloading
 
     try {
-      const response = await fetch(`${baseurl}api/order/all`, {
+      const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/order/all`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

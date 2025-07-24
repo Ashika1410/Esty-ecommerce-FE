@@ -16,7 +16,7 @@ export default function PotraitesDetail() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`${baseurl}api/product/${id}`); 
+        const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/product/${id}`); 
         const result = await response.json();
 
         if (!result || !Array.isArray(result.result)) {
@@ -42,7 +42,7 @@ export default function PotraitesDetail() {
     }
 
     try {
-      const response = await fetch(`${baseurl}api/cart/add`, {
+      const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/cart/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +73,7 @@ export default function PotraitesDetail() {
     }
 
     try {
-      const response = await fetch(`${baseurl}api/wishlist/add`, {
+      const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/wishlist/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
