@@ -5,6 +5,8 @@ import FooterPage from "../Components/Footer";
 import Navbar from "../Components/Header";
 import { FaRegHeart } from "react-icons/fa";
 
+const baseurl = import.meta.env.VITE_API_BASE_URL;
+
 export default function PotraitesDetail() {
   const { id } = useParams(); 
   const navigate = useNavigate();
@@ -14,7 +16,7 @@ export default function PotraitesDetail() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:7702/product/${id}`); 
+        const response = await fetch(`${baseurl}api/product/${id}`); 
         const result = await response.json();
 
         if (!result || !Array.isArray(result.result)) {
@@ -40,7 +42,7 @@ export default function PotraitesDetail() {
     }
 
     try {
-      const response = await fetch("http://localhost:7702/cart/add", {
+      const response = await fetch(`${baseurl}api/cart/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +73,7 @@ export default function PotraitesDetail() {
     }
 
     try {
-      const response = await fetch("http://localhost:7702/wishlist/add", {
+      const response = await fetch(`${baseurl}api/wishlist/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
