@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; 
 
-const baseurl = import.meta.env.VITE_API_BASE_URL;
+// const baseurl = import.meta.env.VITE_API_BASE_URL;
 
 export default function HomePage() {
   const [categories, setCategories] = useState([]);
@@ -9,7 +9,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`${baseurl}api/category`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/category`);
         const result = await response.json();
         
         if (result && Array.isArray(result.result)) {
