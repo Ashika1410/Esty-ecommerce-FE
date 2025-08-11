@@ -5,8 +5,6 @@ import FooterPage from "../Components/Footer";
 import Navbar from "../Components/Header";
 import { FaRegHeart } from "react-icons/fa";
 
-const baseurl = import.meta.env.VITE_API_BASE_URL;
-
 export default function PotraitesDetail() {
   const { id } = useParams(); 
   const navigate = useNavigate();
@@ -16,7 +14,7 @@ export default function PotraitesDetail() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/product/${id}`); 
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/product/${id}`); 
         const result = await response.json();
 
         if (!result || !Array.isArray(result.result)) {

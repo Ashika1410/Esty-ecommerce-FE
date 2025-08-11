@@ -21,7 +21,7 @@ export default function Navbar() {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch(`${baseurl}api/logout`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/logout`, {
         method: "POST",
         credentials: "include",
       });
@@ -39,7 +39,7 @@ export default function Navbar() {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const response = await fetch(`${baseurl}api/cart/all`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/cart/all`);
         const cartItems = response.data;
         const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
         setTotalItems(totalQuantity);

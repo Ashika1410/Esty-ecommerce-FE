@@ -4,8 +4,6 @@ import Navbar from "../Components/Header";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "../UI/Components/ProductCard";
 
-// const baseurl = import.meta.env.VITE_API_BASE_URL;
-
 export default function Potraites({ product }) {
   const [products, setProducts] = useState([]);
   const [searchParams] = useSearchParams();
@@ -14,7 +12,7 @@ export default function Potraites({ product }) {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/product/category/${categoryId}`);
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/product/category/${categoryId}`);
         const result = await response.json();
 
         if (result && Array.isArray(result.result)) {

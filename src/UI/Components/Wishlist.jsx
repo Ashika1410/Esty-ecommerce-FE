@@ -6,8 +6,6 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 import Navbar from "../../Components/Header";
 
-// const baseurl = import.meta.env.VITE_API_BASE_URL;
-
 const WishList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -18,7 +16,7 @@ const WishList = () => {
   useEffect(() => {
     const fetchWishlistItems = async () => {
       try {
-        const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/wishlist/all`, {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/wishlist/all`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -50,7 +48,7 @@ const WishList = () => {
     }
 
     try {
-      const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/cart/add`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/cart/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -76,7 +74,7 @@ const WishList = () => {
 
   const handleRemove = async (wishlistID) => {
     try {
-      const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/wishlist/${wishlistID}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/wishlist/${wishlistID}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });
@@ -91,7 +89,7 @@ const WishList = () => {
 
   const handleClearWishlist = async () => {
     try {
-      const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/wishlist/all`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/wishlist/all`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       });
