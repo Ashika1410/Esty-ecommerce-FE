@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; 
 
-// const baseurl = import.meta.env.VITE_API_BASE_URL;
-
 export default function HomePage() {
   const [categories, setCategories] = useState([]);
 

@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 
-// const baseurl = import.meta.env.VITE_API_BASE_URL;
-
 export default function Blog() {
 
     const [data, setData] = useState([]);

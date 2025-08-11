@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
 
-// eslint-disable-next-line no-unused-vars
-// const baseurl = import.meta.env.VITE_API_BASE_URL;
-
 export default function Category() {
     const [data, setData] = useState([]);
 
