@@ -10,6 +10,7 @@ export default function PotraitesDetail() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
+  const productID = searchParams.get("id"); 
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -40,7 +41,7 @@ export default function PotraitesDetail() {
     }
 
     try {
-      const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/cart/add`, {
+      const response = await fetch(`${process.env.VITE_API_BASE_URL}/${productID}/api/cart/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
