@@ -41,7 +41,7 @@ export default function PotraitesDetail() {
     }
 
     try {
-      const response = await fetch(`${process.env.VITE_API_BASE_URL}/${productID}/api/cart/add`, {
+      const response = await fetch(`${process.env.VITE_API_BASE_URL}/api/cart/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
